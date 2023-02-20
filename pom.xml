@@ -89,13 +89,6 @@
             <version>3.15</version>
         </dependency>
 
-
-
-
-
-
-
-
         <!--        Related to log4j-->
 
         <dependency>
@@ -134,9 +127,6 @@
             <version>2.0.6</version>
         </dependency>
 
-
-
     </dependencies>
 
-    
 </project>
