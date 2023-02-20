@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn">
+<Appenders>
+    <!-- Console appender -->
+    <Console name="console" target="SYSTEM_OUT">
+        <PatternLayout pattern="[%t] %-4level %logger{36} - %msg%n"/>
+    </Console>
+
+    <!-- Rolling file appender -->
+    <RollingFile name="RollingFile" fileName="logs/Logs.log"
+                 filePattern="${logPath}/%d{YYYYMMddHHmmss}--fargo.log">
+
+        <PatternLayout pattern="[%t] %-5p (%F:%L) - %m%n" />
+        <Policies>
+            <SizeBasedTriggeringPolicy size ="10 MB"/>
+            <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+        </Policies>
+        <DefaultRolloverStrategy max="20" />
+    </RollingFile>
+</Appenders>
+
+<Loggers>
+    <!-- Root logger -->
+    <Root level="info">
+        <AppenderRef ref="console" />
+        <AppenderRef ref="RollingFile" />
+    </Root>
+</Loggers>
+</Configuration>
