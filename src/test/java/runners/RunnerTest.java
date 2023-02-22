@@ -11,8 +11,8 @@ import org.junit.runner.RunWith;
         dryRun = false,
 //        monochrome = false,
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-//        plugin = {"pretty","html:target/uiReport.html","rerun:target/uiFailedTests.txt"},
-        tags = "@smokeLoginTest"
+        plugin = {"pretty","html:target/uiReport.html","rerun:target/uiFailedTests.txt"},
+        tags = "@smokeHomeTest"
 )
 
 public class RunnerTest {
