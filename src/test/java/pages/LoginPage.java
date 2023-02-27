@@ -1,8 +1,6 @@
 package pages;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.assertj.core.api.SoftAssertions;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,8 +9,6 @@ import utils.BrowserUtils;
 import utils.DriverHelper;
 
 public class LoginPage extends BrowserUtils {
-    private static final Logger LOGGER = LogManager.getLogger();
-
     public LoginPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
@@ -44,34 +40,9 @@ public class LoginPage extends BrowserUtils {
         return this;
     }
 
-    public LoginPage verifyLoginPageTitle(SoftAssertions softAssertions) {
+    public LoginPage verifyLoginPageTitle() {
         LOGGER.info("Verify the login page title");
-        softAssertions.assertThat(DriverHelper.getDriver().getTitle()).isEqualTo("LoginPage");
+        Assert.assertEquals(DriverHelper.getDriver().getTitle(), "LoginPage");
         return this;
     }
-
-
-
-
-    //    By userNameField = By.id("inputEmail");
-//    By passwordField = By.id("inputPassword");
-//    By signInButton = By.xpath("//button[contains(text(),'Sign in')]");
-//
-//    public LoginPage enterUserName(String userName) {
-//        LOGGER.info("Enter user name {} in the userName field", userName);
-//        getElement(userNameField).sendKeys(userName);
-//        return this;
-//    }
-//
-//    public LoginPage enterPassword(String password) {
-//        LOGGER.info("Enter password {} in the password field", password);
-//        getElement(passwordField).sendKeys(password);
-//        return this;
-//    }
-//
-//    public LoginPage clickSignInButton() {
-//        LOGGER.info("Click on signInButton");
-//        getElement(signInButton).click();
-//        return this;
-//    }
 }

@@ -28,7 +28,7 @@ public class LoginStepDefinitions {
 
     @Then("The user is on the NHS home page")
     public void theUserIsOnTheNHSHomePage() {
-        homePage.verifyHomePageTitle(Hooks.softAssertions);
+        homePage.verifyHomePageTitle();
     }
 
     @When("The user enters wrong {string} and {string}")
@@ -40,26 +40,6 @@ public class LoginStepDefinitions {
 
     @Then("The user is still on the login page")
     public void theUserIsStillOnTheLoginPage() {
-        loginPage.verifyLoginPageTitle(Hooks.softAssertions);
+        loginPage.verifyLoginPageTitle();
     }
-
-
-
-//    @Given("The user enters correct credentials")
-//    public void theUserEntersCorrectCredentials() {
-////        getPage(LoginPage.class)
-////        driver.navigate().to(ConfigReared.readProperty("nhsURL"));
-//    }
-//
-//    @When("The user is on landed on NHS portal login page")
-//    public void theUserIsOnLandedOnNHSPortalLoginPage() {
-//        getPage(LoginPage.class)
-//                .enterUserName("Admin")
-//                .enterPassword("Admin");
-//    }
-//
-//    @Then("The user is on the NHS home page")
-//    public void theUserIsOnTheNHSHomePage() {
-//        getPage(LoginPage.class).clickSignInButton();
-//    }
 }
