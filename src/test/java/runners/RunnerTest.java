@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
 //        monochrome = false,
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         plugin = {"pretty","html:target/uiReport.html","rerun:target/uiFailedTests.txt"},
-        tags = "@smokeHomeTest"
+        tags = "@NHS_28"
 )
 
 public class RunnerTest {

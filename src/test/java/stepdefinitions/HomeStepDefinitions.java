@@ -11,6 +11,11 @@ public class HomeStepDefinitions {
 
     @Then("The user can see the 3 tabs displayed on the home page")
     public void theUserCanSeeTheTabsDisplayedOnTheHomePage() {
-        homePage.verifyTheHomePageTabs(Hooks.softAssertions);
+        homePage.verifyTheHomePageTabs();
+    }
+
+    @Then("The user can see the Patients with rooms table displayed on the home page")
+    public void theUserCanSeeThePatientsWithRoomsTableDisplayedOnTheHomePage() {
+        homePage.verifyPatientsWithRoomsTableHeaders();
     }
 }
