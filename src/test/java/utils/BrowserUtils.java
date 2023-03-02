@@ -101,9 +101,17 @@ public class BrowserUtils {
         wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete'"));
     }
 
-    public static String generateRandomNumberAsString() {
+    public static List<String> getTextListFromWebElements(List<WebElement> elements) {
+        List<String> textList = new ArrayList<>();
+        for (WebElement element : elements) {
+            textList.add(element.getText());
+        }
+        return textList;
+    }
+
+    public static String generateRandomNumberAsString(int bound) {
         Random random = new Random();
-        return String.valueOf(random.nextInt(1001));
+        return String.valueOf(random.nextInt(bound));
     }
 
     public static String generateRandomFirstName() {

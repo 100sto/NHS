@@ -23,7 +23,7 @@ public class LoginPage extends BrowserUtils {
     private WebElement signInButton;
 
     public LoginPage enterUserName(String userName) {
-        LOGGER.info("Enter user name {} in the userName field", userName);
+        LOGGER.info("Enter user name '{}' in the userName field", userName);
         userNameField.sendKeys(userName);
         return this;
     }

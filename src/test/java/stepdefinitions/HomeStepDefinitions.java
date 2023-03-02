@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebDriver;
 import pages.HomePage;
@@ -17,5 +18,10 @@ public class HomeStepDefinitions {
     @Then("The user can see the Patients with rooms table displayed on the home page")
     public void theUserCanSeeThePatientsWithRoomsTableDisplayedOnTheHomePage() {
         homePage.verifyPatientsWithRoomsTableHeaders();
+    }
+
+    @And("The user clicks on 'System settings' side bar")
+    public void theUserClicksOnSystemSettingsSideBar() {
+        homePage.clickSystemSettingsSideBar();
     }
 }

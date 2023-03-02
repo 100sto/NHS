@@ -40,6 +40,9 @@ public class HomePage extends BrowserUtils {
     @FindBy(xpath = "//a[text()[contains(.,'Add patient')]]")
     private WebElement addPatientSideBar;
 
+    @FindBy(xpath = "//a[text()[contains(.,'System settings')]]")
+    private WebElement systemSettingsSideBar;
+
     @FindBy(xpath = "//table[@id='patients-waiting']//td")
     private List<WebElement> patientsWaitingTableResults;
 
@@ -69,6 +72,12 @@ public class HomePage extends BrowserUtils {
     public HomePage clickAddPatientSideBar() {
         LOGGER.info("Click addPatientSideBar");
         addPatientSideBar.click();
+        return this;
+    }
+
+    public HomePage clickSystemSettingsSideBar() {
+        LOGGER.info("Click systemSettingsSideBar");
+        systemSettingsSideBar.click();
         return this;
     }
 

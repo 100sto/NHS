@@ -8,7 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 import utils.BrowserUtils;
 import utils.DriverHelper;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -32,11 +31,8 @@ public class AddPatientPage extends BrowserUtils {
     @FindBy(xpath = "//input[@value='Add patient']")
     private WebElement addPatientButton;
 
-//    @FindBy(xpath = "//label[text()[contains(.,'Male')]]")
-//    private WebElement maleSexButton;
-//
-//    @FindBy(xpath = "//label[text()[contains(.,'Female')]]")
-//    private WebElement femaleSexButton;
+    @FindBy(xpath = "//table[@id='add-new-patient']//td[@class='sorting_1']")
+    private List<WebElement> existingDiseases;
 
     public AddPatientPage addPatientFirstName() {
         String patientFirstName = generateRandomFirstName();
@@ -81,7 +77,7 @@ public class AddPatientPage extends BrowserUtils {
     }
 
     public AddPatientPage addPatientDisease() {
-        List<String> diseases = Arrays.asList("Allergies", "Alzheimer", "Asbestosis", "Headache", "Schizophrenia");
+        List<String> diseases = getTextListFromWebElements(existingDiseases);
         Random random = new Random();
         int index = random.nextInt(diseases.size());
         LOGGER.info("Clicking '{}' disease selected", diseases.get(index));
